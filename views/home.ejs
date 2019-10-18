@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="/stylesheets/website.css" type="text/css"/>
+    <link rel="shortcut icon" type="image/png" href="/images/icon/title.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script type="text/javascript">
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 300) $(".lentop").fadeIn();
+                else $(".lentop").fadeOut();
+            });
+            $(".lentop").click(function () {
+                $("body,html").animate({scrollTop: 0}, "slow");
+            });
+        });
+    </script>
+</head>
+<body id="outer">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><%= webSiteName %></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><%= homePage %></a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= page1 %>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><%= page1_1 %></a></li>
+                    <li><a href="#"><%= page1_2 %></a></li>
+                    <li><a href="#"><%= page1_3 %></a></li>
+                    <li><a href="#"><%= page1_4 %></a></li>
+                    <li><a href="#"><%= page1_5 %></a></li>
+                    <li><a href="#"><%= page1_6 %></a></li>
+                    <li><a href="#"><%= page1_7 %></a></li>
+                    <li><a href="#"><%= page1_8 %></a></li>
+                    <li><a href="#"><%= page1_9 %></a></li>
+                    <li><a href="#"><%= page1_10 %></a></li>
+                    <li><a href="#"><%= page1_11 %></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><%= page2 %></a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= page3 %>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><%= page3_1 %></a></li>
+                    <li><a href="#"><%= page3_2 %></a></li>
+                    <li><a href="#"><%= page3_3 %></a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= page4 %>
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><%= page4_1 %></a></li>
+                    <li><a href="#"><%= page4_2 %></a></li>
+                    <li><a href="#"><%= page4_3 %></a></li>
+                    <li><a href="#"><%= page4_4 %></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><%= page5 %></a></li>
+            <li class="dropdown" style="margin-left: 130px">
+                <button class="btn btn-info navbar-btn" data-toggle="dropdown"><%= language %></button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#"><img src="<%= flagVN %>"
+                                         style="margin-right: 5px;"/>
+                            <%= vietnamese %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="<%= flagEN %>"
+                                         style="margin-right: 5px;"/>
+                            <%= english %>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+            <li>
+                <div class="container" >
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <%= signUp %></button>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Đăng ký tài khoản</h4>
+                            </div>
+                                <div class="modal-body">
+                                    <form method="get" action="/dangkytaikhoan.js">
+                                        <table>
+                                            <tr>
+                                                <td>Tên tài khoản:</td>
+                                                <td><input type="text" name="tentk"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Mật khẩu:</td>
+                                                <td><input type="password" name="matkhau"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Xác nhận mật khẩu:</td>
+                                                <td> <input type="password" name="xacnhanmk"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Email:</td>
+                                                <td> <input type="email" name="email"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Họ tên:</td>
+                                                <td> <input type="text" name="hoten"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Số điện thoại:</td>
+                                                <td><input type="text" name="sodt"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="submit" value="Đăng ký tài khoản"></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="container" >
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <%= signIn %></button>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Đăng ký tài khoản</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="get" action="/dangnhap.js">
+                                        <table>
+                                            <tr>
+                                                <td> Tên tài khoản:</td>
+                                                <td> <input type="text" name="tentk"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Mật khẩu:</td>
+                                                <td><input type="text" name="matkhau"></td>
+                                            </tr>
+                                            <tr>
+                                                <td> <input type="submit" value="Đăng nhập"></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br>
+<header class="topnav">
+    <div class="search-container">
+        <form action="/" style="margin-left: 10px; margin-right: 10px">
+            <div style="float: left; padding-top: 10px">
+                <%= phoneName %>: <font size="3" color="red"
+                                        style="font-weight: bold;"><%= myPhone %></font>
+            </div>
+            <div style="float: right">
+                <input type="text" placeholder="<%= searchPlaceholder %>" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <font size="5" color="#a9a9a9"> | </font>
+                <button type="button" style="margin-left: 15px"><i class='fas fa-cart-arrow-down'
+                                                                   style='font-size:22px'></i></button>
+                <font size="5" color="#a9a9a9"> | </font>
+                <button type="button" style="margin-left: 15px"><i class='fas fa-user-circle'
+                                                                   style='font-size:22px'></i></button>
+                <font size="5" color="#a9a9a9"> | </font>
+                <img src="<%= flagVN %>" style="margin-right: 15px; padding-bottom: 4px; margin-left: 15px"/><%= vn %>
+            </div>
+        </form>
+    </div>
+</header>
+<img src="/images/background/h1.jpg" id="imghead" stt="0" width="100%" height="450" style="margin-top: 3px"/>
+<section>
+    <div class="lentop">
+        <img src="/images/icon/quaylai.jpg"/>
+    </div>
+
+</section>
+<footer>
+    <table width="100%" style="margin-left: 20px">
+        <thead>
+        <th style="text-align: center; font-size: large"><%= lienhe %></th>
+        <th style="text-align: center; font-size: large"><%= amthuc %></th>
+        <th style="text-align: center; font-size: large"><%= giaitri %></th>
+        <th style="text-align: center; font-size: large"><%= muasam %></th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><%= diachi %></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= quanan %></a></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= rapphim %></a></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= tttm %></a></td>
+        </tr>
+        <tr>
+            <td><i class='fas fa-mobile-alt' style='font-size:18px'></i> <%= myPhone %></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= anvat %></a></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= khuvuichoi %></a></td>
+        </tr>
+        <tr>
+            <td><i class='fas fa-home' style='font-size:18px'></i> <%= openDoor %></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= nhahang %></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center"><a id="hover" href="#"><%= buffet %></a></td>
+        </tr>
+        <tr>
+            <td>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.801019275597!2d106.68652031410558!3d10.826534261228911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528f098740889%3A0x19154ea0c566358b!2zNjI3IFBoYW4gVsSDbiBUcuG7iywgUGjGsOG7nW5nIDcsIEfDsiBW4bqlcCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1569504074318!5m2!1svi!2s"
+                        width="350" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</footer>
+</body>
+</html>
